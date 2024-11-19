@@ -1,0 +1,24 @@
+<h1>Estado del GPS</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Estado</th>
+      <th>Fecha/Hora</th>
+    </tr>
+  </thead>
+  <tbody id="gps-data">
+    <%= render partial: 'gps_data', locals: { gps_data: @gps_data } %>
+  </tbody>
+</table>
+
+<script>
+  setInterval(() => {
+    fetch('/gps_data')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('gps-data').innerHTML = html;
+      });
+  }, 1000);
+</script>

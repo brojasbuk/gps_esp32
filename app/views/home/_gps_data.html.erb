@@ -1,0 +1,8 @@
+<% gps_data.each do |data| %>
+  <tr>
+    <td><%= data.latitude || 'N/A' %></td>
+    <td><%= data.longitude || 'N/A' %></td>
+    <td><%= data.status %></td>
+    <td><%= data.timestamp || data.created_at.strftime('%H:%M:%S %d-%m-%Y') %></td>
+  </tr>
+<% end %>
