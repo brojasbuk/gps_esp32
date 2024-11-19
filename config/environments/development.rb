@@ -15,8 +15,9 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   # Enable server timing.
+  config.hosts.clear
   config.server_timing = true
-  config.hosts << "25b8-186-189-97-111.ngrok-free.app"
+  config.hosts << "93b9-186-189-97-111.ngrok-free.app"
 
 
   # Enable/disable caching. By default caching is disabled.
